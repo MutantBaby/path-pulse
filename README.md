@@ -17,18 +17,14 @@ cd repository
 
 Build and run the utility:
 ```bash
-cargo run -- -p <pattern> -f <file_path>
+cargo run -- <pattern> <file_path>
 ```
 
 Replace `<pattern>` with the pattern you want to search for and `<file_path>` with the path to the file.
 
-## Command-line Options
-- `-p, --pattern`: Specify the pattern to search for in the file.
-- `-f, --file`: Specify the path to the file to be searched.
-
 ## Example
 ```bash
-cargo run -- -p "error" -f path/to/log.txt
+cargo run -- error path/to/log.txt
 ```
 This will search for the pattern "error" in the file located at "path/to/log.txt" and display the lines containing the specified pattern.
 
