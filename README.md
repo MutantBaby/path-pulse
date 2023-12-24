@@ -17,7 +17,7 @@ cd repository
 
 Build and run the utility:
 ```bash
-cargo run --release -- -p <pattern> -f <file_path>
+cargo run -- -p <pattern> -f <file_path>
 ```
 
 Replace `<pattern>` with the pattern you want to search for and `<file_path>` with the path to the file.
@@ -28,20 +28,10 @@ Replace `<pattern>` with the pattern you want to search for and `<file_path>` wi
 
 ## Example
 ```bash
-cargo run --release -- -p "error" -f path/to/log.txt
+cargo run -- -p "error" -f path/to/log.txt
 ```
 This will search for the pattern "error" in the file located at "path/to/log.txt" and display the lines containing the specified pattern.
 
 ## Dependencies
 - [clap](https://crates.io/crates/clap): Command line argument parsing.
 - [anyhow](https://crates.io/crates/anyhow): Error handling.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contributions
-Contributions are welcome! If you find any issues or have suggestions for improvement, feel free to open an issue or create a pull request.
-
-## Acknowledgments
-- This utility was developed using Rust programming language.
-- Special thanks to the creators and maintainers of the `clap` and `anyhow` crates for simplifying argument parsing and error handling in Rust.
