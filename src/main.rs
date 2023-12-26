@@ -15,7 +15,11 @@ struct Cli {
     path: PathBuf,
 }
 
-fn find_match(path: &PathBuf, pattern: &str, mut writer: impl Write) -> Result<()> {
+pub fn find_match(path: &PathBuf, pattern: &str, mut writer: impl Write) -> Result<()> {
+    if pattern.is_empty() {
+        return Err(anyhow::anyhow!("Pattern must not be empty"));
+    }
+
     let file: File =
         File::open(path).with_context(|| format!("could not read file `{}`", path.display()))?;
     let content: BufReader<File> = BufReader::new(file);
