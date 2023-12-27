@@ -1,13 +1,21 @@
 [package]
 name = "path_pulse"
-version = "0.1.0"
 edition = "2021"
+version = "0.1.0"
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+categories = ["command-line-utilities"]
+keywords = ["cli", "search", "pattern", "files"]
+description = "A tool to search patterns in files"
+homepage = "https://github.com/MutantBaby/path-pulse"
+repository = "https://github.com/MutantBaby/path-pulse.git"
+authors = ["Shaheryar Tatari <shaheryarbakir998877@gmail.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-clap = { version = "4.0", features = ["derive"] }
 anyhow = "1.0"
-assert_cmd = "2.0.12"
 predicates = "3.0.4"
 assert_fs = "1.0.13"
+assert_cmd = "2.0.12"
+clap = { version = "4.0", features = ["derive"] }
