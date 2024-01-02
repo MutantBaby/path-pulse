@@ -24,11 +24,14 @@ pub fn find_match(path: &PathBuf, pattern: &str, mut writer: impl Write) -> Resu
         File::open(path).with_context(|| format!("could not read file `{}`", path.display()))?;
     let content: BufReader<File> = BufReader::new(file);
 
+    let mut line_counter = 0;
+
     for lines in content.lines() {
         let data: String = lines?;
+        line_counter += 1;
 
         if data.contains(pattern) {
-            writeln!(writer, "{}", data)?;
+            writeln!(writer, "Line no {}: {}", line_counter, data)?;
         }
     }
 
